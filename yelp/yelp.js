@@ -1,6 +1,6 @@
 (function(window) {
 
-    var yelp = this, yelpKey = 'BzkG0eKlTgxErtaJyIxQCA&term&term'
+    var yelp = this, yelpKey = 'BzkG0eKlTgxErtaJyIxQCA'
 
     yelp.test = function() {
 	console.log("test");
@@ -11,7 +11,7 @@
 	    type : 'GET',
 	    Accept : "application/json",
 	    url : 'http://api.yelp.com/business_review_search?ywsid=' + yelpKey
-		    + '&term&term=Bars&lat=48.1333&long=11.5667',
+		    + '&term=Bars&lat=48.1333&long=11.5667',
 	    crossDomain : true,
 	    dataType : 'jsonp',
 
