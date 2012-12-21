@@ -6,12 +6,12 @@
 	console.log("test");
     };
 
-    yelp.callYelp = function() {
+    yelp.callYelp = function(lat, long) {
 	$.ajax({
 	    type : 'GET',
 	    Accept : "application/json",
 	    url : 'http://api.yelp.com/business_review_search?ywsid=' + yelpKey
-		    + '&term=Bars&lat=48.1333&long=11.5667',
+		    + '&term=Bars&lat=' + lat + '&long=' + long,
 	    crossDomain : true,
 	    dataType : 'jsonp',
 
