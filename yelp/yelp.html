@@ -8,24 +8,29 @@
 <script src="../lib/jquery.mobile-1.2.0.min.js"></script>
 <script src="yelp.js"></script>
 <script>
-yelp.callYelp(48.136848, 11.695118);
+     yelp.callLatLong(48.136848, 11.695118);
 </script>
 </head>
 <body>
 	<div data-role="page">
 		<div data-role="header" data-position="fixed">
-			<h1>Yelp Businesses</h1>
+			<h1>Nearby Bars</h1>
 		</div>
 		<!-- /header -->
 		<div data-role="content">
-			<ul data-role="listview" data-filter="true">
+			<ul data-role="listview" data-inset="true" data-filter="true">
 			</ul>
 		</div>
 		<!-- /content -->
 		<div data-role="footer" class="ui-bar" data-position="fixed">
-			<a href="index.html" data-role="button" data-icon="plus">Add</a>
-			<a href="index.html" data-role="button" data-icon="arrow-u">Up</a>
-			<a href="index.html" data-role="button" data-icon="arrow-d">Down</a>
+			<div data-role="navbar">
+				<ul>
+					<li><a onclick="yelp.callLatLong(48.136848, 11.695118)">OOP</a></li>
+					<li><a onclick="yelp.callLatLong(50.0019,8.27561)">JAX</a></li>
+					<li><a onclick="yelp.callLatLong(48.151149,11.618246)">W-JAX</a></li>
+					<li><a onclick="yelp.callAddress('333%20OFarrell%20St%2ASan%20Francisco%2A%20CA')">JavaOne</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<!-- /page -->
