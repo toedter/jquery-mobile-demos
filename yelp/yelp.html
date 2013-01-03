@@ -5,34 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../lib/jquery.mobile-1.2.0.min.css" />
 <script src="../lib/jquery-1.8.3.min.js"></script>
-<script src="../lib/jquery.mobile-1.2.0.min.js"></script>
 <script src="yelp.js"></script>
+<script src="../lib/jquery.mobile-1.2.0.min.js"></script>
 <script>
-     yelp.callLatLong(48.136848, 11.695118);
+    yelp.callLatLong(48.136848, 11.695118);
 </script>
 </head>
 <body>
-	<div data-role="page">
+	<div data-role="page" id="main">
 		<div data-role="header" data-position="fixed">
 			<h1>Nearby Bars</h1>
+			<a href="#new" data-icon="new" class="ui-btn-right">New Location</a>
 		</div>
-		<!-- /header -->
 		<div data-role="content">
 			<ul data-role="listview" data-inset="true" data-filter="true">
 			</ul>
 		</div>
-		<!-- /content -->
-		<div data-role="footer" class="ui-bar" data-position="fixed">
+		<div data-role="footer" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-					<li><a onclick="yelp.callLatLong(48.136848, 11.695118)">OOP</a></li>
-					<li><a onclick="yelp.callLatLong(50.0019,8.27561)">JAX</a></li>
-					<li><a onclick="yelp.callLatLong(48.151149,11.618246)">W-JAX</a></li>
-					<li><a onclick="yelp.callAddress('333%20OFarrell%20St%2ASan%20Francisco%2A%20CA')">JavaOne</a></li>
+					<li><a onclick="yelp.callLatLong('OOP',48.136848, 11.695118)">OOP</a></li>
+					<li><a onclick="yelp.callLatLong('JAX', 50.0019,8.27561)">JAX</a></li>
+					<li><a onclick="yelp.callLatLong('W-JAX', 48.151149,11.618246)">W-JAX</a></li>
+					<li><a onclick="yelp.callAddress('JavaOne', '333%20OFarrell%20St%2ASan%20Francisco%2A%20CA')">JavaOne</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
-	<!-- /page -->
+	<div data-role="page" id="new" data-add-back-btn="true" data-direction="reverse">
+		<div data-role="header" data-position="fixed">
+			<h1>New Location</h1>
+		</div>
+		<div data-role="content">
+			<form>
+				<div data-role="fieldcontain">
+					<label for="label">Label</label> <input type="text" name="label" id="label" value="" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="address">Address</label>
+					<textarea cols="40" rows="8" name="address" id="address"></textarea>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="radius">Range</label> <input type="range" name="radius" id="radius" value="5" min="1" max="10"
+						data-highlight="true"
+					/>
+				</div>
+				<button type="submit" name="submit" value="submit" data-theme="b">Submit</button>
+			</form>
+		</div>
+	</div>
 </body>
 </html>

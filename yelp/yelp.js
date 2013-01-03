@@ -6,24 +6,43 @@
 	console.log(msg);
     };
 
-    yelp.callLatLong = function(lat, long) {
+    $(document).on('pageinit', '#new', function() {
+
+	$('form').submit(function() {
+
+	    label = $('[name=label]').val();
+	    address = $('[name=address]').val();
+	    radius = $('[name=radius]').val();
+
+	    $.mobile.changePage('#main');
+	    yelp.callAddress(label, address, radius);
+	    return false;
+	});
+
+    });
+
+    yelp.callLatLong = function(label, lat, long, radius) {
 	var params = '&lat=' + lat + '&long=' + long;
-	callWithParams(params);
+	callWithParams(label, params, radius);
     };
 
-    yelp.callAddress = function(address) {
+    yelp.callAddress = function(label, address, radius) {
 	var params = '&location=' + address;
-	callWithParams(params);
+	callWithParams(label, params, radius);
     };
 
-    callWithParams = function(params) {
+    callWithParams = function(label, params, radius) {
+	if(!radius)
+	    radius = 2;
+	
+	$('.ui-title').text(label);
 	$("ul:jqmData(role='listview')").empty();
 	$.mobile.loading('show');
 	$
 		.ajax({
 		    type : 'GET',
 		    url : 'http://api.yelp.com/business_review_search?ywsid=' + yelpKey + '&term=Bars' + params
-			    + '&radius=2.0',
+			    + '&radius=' + radius,
 		    crossDomain : true,
 		    dataType : 'jsonp',
 
