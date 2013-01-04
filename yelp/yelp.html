@@ -8,9 +8,6 @@
 <script src="../lib/jquery-1.8.3.min.js"></script>
 <script src="yelp.js"></script>
 <script src="../lib/jquery.mobile-1.2.0.min.js"></script>
-<script>
-    yelp.callLatLong(48.136848, 11.695118);
-</script>
 </head>
 <body>
 	<div data-role="page" id="main">
@@ -18,7 +15,7 @@
 			<h1>Nearby Bars</h1>
 			<a href="#new" data-icon="new" class="ui-btn-right">New Location</a>
 		</div>
-		<div data-role="content">
+		<div data-role="content" data-theme="a">
 			<ul data-role="listview" data-inset="true" data-filter="true">
 			</ul>
 		</div>
