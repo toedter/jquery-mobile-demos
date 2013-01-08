@@ -7,7 +7,7 @@
     };
 
     $(document).on('pageinit', '#main', function() {
-	yelp.callLatLong('OOP',48.136848, 11.695118);
+	// yelp.callLatLong('OOP',48.136848, 11.695118);
     });
 
     $(document).on('pageinit', '#new', function() {
@@ -36,7 +36,7 @@
 	if (!radius)
 	    radius = 2;
 
-	$('.ui-title').text('Bars close to ' + label + ' (' + radius + ' km)');
+	$('.ui-title').text(label + ' (' + radius + ' km)');
 	$("ul:jqmData(role='listview')").empty();
 	$.mobile.loading('show');
 	$.ajax({
