@@ -64,7 +64,9 @@
                         list += "<p>" + item.address1 + ", " + item.city + "</p>";
                         list += '</a></li>';
                     });
-                    $("ul:jqmData(role='listview')").append(list).listview("refresh");
+                    $("#yelpList ul").append(list).listview("refresh");
+                    // or
+                    // $("ul:jqmData(role='listview')").append(list).listview("refresh");
                 }
             }
         });
