@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html  ng-app="movies" ng-controller="MovieController">
+<head>
+    <title>jQuery Mobile List Demo 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../lib/jquery.mobile/current/jquery.mobile.min.css"/>
+    <script src="../lib/jquery/current/jquery.min.js"></script>
+    <script src="../lib/jquery.mobile/current/jquery.mobile.min.js"></script>
+    <script src="../lib/angular/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header">
+        <h1>IMDB Top 20 Movies</h1>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+        <ol data-role="listview" data-inset="true" data-filter="true">
+            <li ng-repeat="movie in movies"><a href="#">{{movie.title}}</a></li>
+        </ol>
+    </div>
+    <!-- /content -->
+</div>
+<!-- /page -->
+</body>
+</html>
